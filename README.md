@@ -35,8 +35,8 @@ SOFTWARE:
 HARDWARE:
 
 -	Laptop / PC
--	GB Ram
--	1 GB Storage
+-	GB of RAM
+-	1GB Storage
  
 ### 1.4 References
 - Stackoverflow
