@@ -24,7 +24,7 @@ GREEN_LASER = pygame.image.load("greenlaser.png")
 YELLOW_LASER = pygame.image.load("bullet.png")
 
 # Background
-BG = pygame.transform.scale(pygame.image.load("bg.jpeg"), (WIDTH, HEIGHT))
+BG = pygame.transform.scale(pygame.image.load("bg.jpg"), (WIDTH, HEIGHT))
 
 # Laser Class Controls the lasers that the space ships shoot
 class Laser:
