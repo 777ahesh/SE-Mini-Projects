@@ -59,7 +59,7 @@ node *last = NULL;
 int main()	// Main function
 {
 
-	system("COLOR 79");		//Color to change background
+	// system("COLOR 79");		//Color to change background
 	medicineType medicine;
 	int menu;
 	do
@@ -149,18 +149,18 @@ void medicineType::take_order()		//function to take_order
 	temp=new node;
 
 				cout <<"**************************************************************************\n";
-				cout<<"DRUGS ID"<<"\tDRUGS TYPE"<<"   \t\tDRUGS NAME"<<"           DRUGS PRICE(RM)"<<endl;
+				cout<<"DRUGS ID"<<"\tDRUGS TYPE"<<"   \t\tDRUGS NAME"<<"           DRUGS PRICE(INR)"<<endl;
 				cout <<"**************************************************************************\n";
-                cout<<"0001"<<"\t"<<"\tOTC"<<"\t\t"<<"    Probiotics"<<"			RM 2.00"<<endl;
-                cout<<"0002"<<"\t"<<"\tOTC"<<"\t\t"<<"    Vitamin C(500mg)"<<"		RM 3.00"<<endl;
-                cout<<"0003"<<"\t"<<"\tOTC"<<"\t\t"<<"    Acid Free C(500mg)"<<"		RM 1.00"<<endl;
-                cout<<"0004"<<"\t"<<"\tOTC"<<"\t\t"<<"    Women'S Multivate"<<"		RM 4.00"<<endl;
-                cout<<"0005"<<"\t"<<"\tOTC"<<"\t\t"<<"    Marino Tablet"<<"	 	RM 1.00"<<endl;
-                cout<<"0006"<<"\t"<<"\tOTC"<<"\t\t"<<"    Maxi Cal Tablet"<<" 		RM 5.00"<<endl;
-                cout<<"0007"<<"\t"<<"\tOTC"<<"\t\t"<<"    Amino Zinc Tablet"<<"		RM 7.00"<<endl;
-                cout<<"0008"<<"\t"<<"\tOTC"<<"\t\t"<<"    Burnex"<<"			RM 4.00"<<endl;
-                cout<<"0009"<<"\t"<<"\tOTC"<<"\t\t"<<"    Fabuloss 5"<<"			RM 3.00"<<endl;
-                cout<<"0010"<<"\t"<<"\tOTC"<<"\t\t"<<"    Royal Propollen"<<"		RM 5.00"<<endl;
+                cout<<"0001"<<"\t"<<"\tOTC"<<"\t\t"<<"    Probiotics"<<"			INR 2.00"<<endl;
+                cout<<"0002"<<"\t"<<"\tOTC"<<"\t\t"<<"    Vitamin C(500mg)"<<"		INR 3.00"<<endl;
+                cout<<"0003"<<"\t"<<"\tOTC"<<"\t\t"<<"    Acid Free C(500mg)"<<"		INR 1.00"<<endl;
+                cout<<"0004"<<"\t"<<"\tOTC"<<"\t\t"<<"    Women'S Multivate"<<"		INR 4.00"<<endl;
+                cout<<"0005"<<"\t"<<"\tOTC"<<"\t\t"<<"    Marino Tablet"<<"	 	INR 1.00"<<endl;
+                cout<<"0006"<<"\t"<<"\tOTC"<<"\t\t"<<"    Maxi Cal Tablet"<<" 		INR 5.00"<<endl;
+                cout<<"0007"<<"\t"<<"\tOTC"<<"\t\t"<<"    Amino Zinc Tablet"<<"		INR 7.00"<<endl;
+                cout<<"0008"<<"\t"<<"\tOTC"<<"\t\t"<<"    Burnex"<<"			INR 4.00"<<endl;
+                cout<<"0009"<<"\t"<<"\tOTC"<<"\t\t"<<"    Fabuloss 5"<<"			INR 3.00"<<endl;
+                cout<<"0010"<<"\t"<<"\tOTC"<<"\t\t"<<"    Royal Propollen"<<"		INR 5.00"<<endl;
                 cout<<" "<<endl;
     
 	temp = new node;
@@ -189,7 +189,7 @@ void medicineType::take_order()		//function to take_order
         cout << "How many medicine do you want: ";
         cin >> temp->quantity[i];
         temp->amount[i] = temp->quantity[i] * temp->Medicine[temp->menu2[i]-1];
-        cout << "The amount You need to pay is: " << temp->amount[i]<<" RM"<<endl;
+        cout << "The amount You need to pay is: " << temp->amount[i]<<" INR"<<endl;
         system("PAUSE");
                       
 	}
@@ -261,21 +261,42 @@ void medicineType::order_list()		//Function to display receipt
 			cout << temp->type <<"  \t\t";
 			cout<<temp->medicineName[temp->menu2[i]-1]<<"\t\t\t  ";
 			cout<<temp->quantity[i] <<"\t\t";
-			cout<< temp->amount[i]<<" RM"<<endl;
+			cout<< temp->amount[i]<<" INR"<<endl;
 			cout<<"_________________________________________________________________________________"<<endl;
 		}
-		
-		temp->total = temp->amount[0]+temp->amount[1]+temp->amount[2]+temp->amount[3]+temp->amount[4]+temp->amount[5]+temp->amount[6]+temp->amount[7]
-						+temp->amount[8]+temp->amount[9];
+		int k=0;
+		int sum = 0;
+		while(k<i){
+			sum += temp->amount[k];
+			k++;
+		}
+		temp->total = sum;
+		// +temp->amount[1]+temp->amount[2]+temp->amount[3]+temp->amount[4]+temp->amount[5]+temp->amount[6]+temp->amount[7]
+		// 				+temp->amount[8]+temp->amount[9];
 		cout<<"Total Bill is : "<<temp->total;
 		cout<<"\n";
 		cout << "Type the exact amount You need to pay: ";
         cin >> num;
 
-		cout <<"\n";
+		do{
+				cout<<"\n";
+				if(num!=temp->total){
+			    cout<<"\nPlease Enter The Full Bill Payment...";
+				cout << "\nType the exact amount You need to pay: ";
+				cin >> num;
+				}
+
+		}while(num!=temp->total);
+
+
+		if (num == temp->total)
+		{cout <<"\n";
 		cout <<"\n";
 		cout<<"Payment Done\nThank You\n";
 		cout <<"\n_______________________________________________________________________________\n";
+		}else{
+			
+		}
 		}
 
 
@@ -395,7 +416,7 @@ void medicineType::modify()		//function to modify order
         cout << "How many New medicine do you want: ";
         cin >> temp->quantity[i];
         temp->amount[i] = temp->quantity[i] * temp->Medicine[temp->menu2[i]-1];
-        cout << "The amount You need to pay After Modify  is: " << temp->amount[i]<<" RM"<<endl;
+        cout << "The amount You need to pay After Modify  is: " << temp->amount[i]<<" INR"<<endl;
         system("PAUSE");
 	}
 	temp = temp->next;
@@ -457,12 +478,20 @@ void medicineType::daily_summary()		//Function to display Daily Summary
 				cout << temp->type <<"  \t\t";
 				cout<<temp->medicineName[temp->menu2[i]-1]<<"\t\t";
 				cout<<temp->quantity[i] <<"\t\t";
-				cout<< temp->amount[i]<<" RM"<<endl;
+				cout<< temp->amount[i]<<" INR"<<endl;
 				cout<<"_____________________________________________________________________________"<<endl;
 			}
-			
-			temp->total = temp->amount[0]+temp->amount[1]+temp->amount[2]+temp->amount[3]+temp->amount[4]+temp->amount[5]+temp->amount[6]+temp->amount[7]
-			+temp->amount[8]+temp->amount[9];
+
+			int k=0;
+			int sum = 0;
+			while(k<i){
+				sum += temp->amount[k];
+				k++;
+			}
+			temp->total = sum;
+
+			// temp->total = temp->amount[0]+temp->amount[1]+temp->amount[2]+temp->amount[3]+temp->amount[4]+temp->amount[5]+temp->amount[6]+temp->amount[7]
+			// +temp->amount[8]+temp->amount[9];
 			cout<<"Total Bill is : "<<temp->total;
 		
 			cout <<"\n";
