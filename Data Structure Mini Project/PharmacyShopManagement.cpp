@@ -1,3 +1,7 @@
+//Data Structure Laboratory Mini-Project
+// -------------------------------
+//       Header Files
+// -------------------------------
 #include <iostream>
 #include <stdlib.h>
 #include <string>
@@ -5,12 +9,17 @@
 #include <cmath>
 #include <cstdio>
 #include <fstream>
+#include<conio.h>
 #include <iomanip>
 #define max 10
 
 using namespace std;
 //the header file
 
+
+// -------------------------------
+//      Class Declaration 
+// -------------------------------
 class medicineType	//base class
 {
 public:
@@ -29,6 +38,7 @@ public:
 {
 
 }		//constructor for class CarType
+
 
 
 struct node //constract node
@@ -58,6 +68,27 @@ node *last = NULL;
 
 int main()	// Main function
 {
+	system("cls");
+    char r1=201,r2=200,r3=188,r4=187,r5=205,r6=186,r7=220,r8=202,r9=204,r10=203,r11=206,r12=185;
+    cout<<"\n";
+    for(int i=0;i<89;i++)
+    cout<<r7;
+    cout<<endl;
+    cout<<"\n    "<<r1<<r5<<r5<<r5<<r5<<r5<<r5<<r5<<r5<<r5<<r5<<r4<<"   INTERNATIONAL INSTITUTE OF INFORMATION TECHNOLOGY"<<endl;
+    cout<<"    "<<r6<<"   I2IT   "<<r6<<"                Affilated to SPPU\n";
+    cout<<"    "<<r2<<r5<<r5<<r5<<r5<<r5<<r5<<r5<<r5<<r5<<r5<<r3<<"     Approved to AICTE, RECOGNIZED BY DTE, Govt.\n";
+    cout<<"                     Accredited with Grade B++ by NAAC.\n";
+
+    for(int i=0;i<89;i++)
+    cout<<r7;
+    
+    
+	cout<<"\n\n\n\n\t\t\t\tCreated By:"<<endl;
+	cout<<"\t\t\tMahesh Gaikwad (SC27)"<<endl;
+	cout<<"\t\t\tPrathamesh Bhise (SC44)"<<endl;
+	cout<<"\t\t\tPranav Gaikwad (SC41)"<<endl;
+
+	getch();
 
 	// system("COLOR 79");		//Color to change background
 	medicineType medicine;
