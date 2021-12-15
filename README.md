@@ -16,7 +16,7 @@ Pharmacy Management System is a small application developed using C++. In older 
 -	Access Time.
 -	Lack of Security. 
  
-By using our application, we can see our data whenever we want, here we will have options like search record by name or using their id, insert new record and so on. In this project we can save our product id,cost, name, quantity and this all we can see at a time. This system is developed keeping in mind the general needs of the pharmacist while maintaining the records.
+By using our application, we can see our data whenever we want, here we will have options like search record by name or using their id, insert new record and so on. In this project we can save our product id,cost, name, quantity and this all we can see at a time. This system is developed keeping in mind the general needs of the pharmacist while maintaining the records.We have implemented using C++.
 
 
 ### 1.2	INTRODUCTION
